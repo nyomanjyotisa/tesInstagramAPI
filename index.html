@@ -926,7 +926,22 @@
                 </div>
             </div>
         </div>
-    </div>                                                                                                                                  
+    </div>
+	<h1 style="text-align: center">Show Instagram Feed on your Website</h1>
+    	<div id="instafeed-container"></div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+	<script type="text/javascript">
+	var userFeed = new Instafeed({
+		get: 'user',
+		target: "instafeed-container",
+    	resolution: 'low_resolution',
+		accessToken: 'IGQVJXX0ZAVTUpiN3BJRklKdm9lYVBVU1p4OG0tcERENWx0SjhFSklGd0dyT01Fb1NyUGU4bVdJVEJXMnZAvWEk5aEZAPLWZAEY284OGZAfT2lkUzAwR2g3a1gtemZAjSDlqdmRCblpTZAmVZAUUctcWtIQ0lpQQZDZD'
+	});
+	userFeed.run();
+	</script>
 </div>
 
 <div id="kontak">
@@ -1010,21 +1025,7 @@
         <a class="bt-top btn btn-circle btn-lg btn-style" href="#top"><i class="ti-arrow-up"></i></a>
 
     </div>
-	<h1 style="text-align: center">Show Instagram Feed on your Website</h1>
-    	<div id="instafeed-container"></div>
 
-
-
-	<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
-	<script type="text/javascript">
-	var userFeed = new Instafeed({
-		get: 'user',
-		target: "instafeed-container",
-    	resolution: 'low_resolution',
-		accessToken: 'IGQVJXX0ZAVTUpiN3BJRklKdm9lYVBVU1p4OG0tcERENWx0SjhFSklGd0dyT01Fb1NyUGU4bVdJVEJXMnZAvWEk5aEZAPLWZAEY284OGZAfT2lkUzAwR2g3a1gtemZAjSDlqdmRCblpTZAmVZAUUctcWtIQ0lpQQZDZD'
-	});
-	userFeed.run();
-	</script>
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
