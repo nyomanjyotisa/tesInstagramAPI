@@ -56,7 +56,9 @@
  
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">-->
     <script src="https://kit.fontawesome.com/b34d9ac5d0.js" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+<!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 </head>
 
 <body>
@@ -355,8 +357,13 @@
     <!-- ============================================================== -->
     <!-- End Berita  -->
     <!-- ============================================================== -->
-	<h3 class="text-center">Postingan Instagram</h3>
-	<div id="instagram"></div>
+    <div class="bg-light spacer feature2">
+        <div class="container">
+            <h3 class="text-center">Postingan Instagram</h3>
+                <div id="instagram" class="row"></div>     
+        </div>
+    </div> 
+
 
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -365,7 +372,7 @@
 				let data = result.data
 				$.each(data, function(index, data){
 					$('#instagram').append(`
-						<div class="col-sm-3 text-center mt-2">
+						<div class="col-sm-4 text-center mt-2">
 							<div class="card">
 								<div class="card-header"></div>
 								<div class="card-body">
