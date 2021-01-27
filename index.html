@@ -34,6 +34,14 @@
         .closebtn:hover {
           color: black;
         }
+
+        .caption {
+           overflow: hidden;
+           text-overflow: ellipsis;
+           display: -webkit-box;
+           -webkit-line-clamp: 10; /* number of lines to show */
+           -webkit-box-orient: vertical;
+        }
     </style>
 
     
@@ -365,28 +373,28 @@
     </div> 
 
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$.getJSON('data.json', function(result){
-				console.log(result);
-				let data = result.data
-				$.each(data, function(index, data){
-					$('#instagram').append(`
-						<div class="col-sm-4 text-center mt-2">
-							<div class="card">
-								<div class="card-header"></div>
-								<div class="card-body">
-									<img src="${data.media_url}" alt="Postingan hmtiudayana">
-									<p><strong class="badge badge-warning"><h5></h5></strong></p>
-									<p class="card-text">${data.caption}</p>
-									<a href="${data.permalink}" class="btn btn-primary">See detail</a>
-								</div>			
-							</div>
-						</div>`)
-				})
-			})			
-		})
-	</script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.getJSON('data.json', function(result){
+                console.log(result);
+                let data = result.data
+                $.each(data, function(index, data){
+                    $('#instagram').append(`
+                        <div class="col-sm-4 text-center mt-2">
+                            <div class="card">
+                                <div class="card-header"></div>
+                                <div class="card-body">
+                                    <img src="${data.media_url}" alt="Postingan hmtiudayana" class="img-thumbnail">
+                                    <p><strong class="badge badge-warning"><h5></h5></strong></p>
+                                    <p class="card-text caption">${data.caption}</p>
+                                    <a href="${data.permalink}" class="btn btn-primary">See detail</a>
+                                </div>          
+                            </div>
+                        </div>`)
+                })
+            })          
+        })
+    </script>
     <!-- ============================================================== -->
     <!-- Kegiatan  -->
     <!-- ============================================================== -->
