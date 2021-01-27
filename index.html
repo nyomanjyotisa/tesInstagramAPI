@@ -355,6 +355,31 @@
     <!-- ============================================================== -->
     <!-- End Berita  -->
     <!-- ============================================================== -->
+	<h3 class="text-center">Postingan Instagram</h3>
+	<div id="instagram"></div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.getJSON('data.json', function(result){
+				console.log(result);
+				let data = result.data
+				$.each(data, function(index, data){
+					$('#instagram').append(`
+						<div class="col-sm-3 text-center mt-2">
+							<div class="card">
+								<div class="card-header"></div>
+								<div class="card-body">
+									<img src="${data.permalink}" alt="Postingan hmtiudayana">
+									<p><strong class="badge badge-warning"><h5></h5></strong></p>
+									<p class="card-text">${data.caption}</p>
+									<a href="${data.permalink}" class="btn btn-primary">See detail</a>
+								</div>			
+							</div>
+						</div>`)
+				})
+			})			
+		})
+	</script>
     <!-- ============================================================== -->
     <!-- Kegiatan  -->
     <!-- ============================================================== -->
@@ -927,31 +952,6 @@
             </div>
         </div>
     </div>
-	<h3>Postingan Instagram</h3>
-	<div id="instagram"></div>
-
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$.getJSON('data.json', function(result){
-				console.log(result);
-				let data = result.data
-				$.each(data, function(index, data){
-					$('#instagram').append(`
-						<div class="col-sm-3 text-center mt-2">
-							<div class="card">
-								<div class="card-header"></div>
-								<div class="card-body">
-									<img src="${data.permalink}" alt="Postingan hmtiudayana">
-									<p><strong class="badge badge-warning"><h5></h5></strong></p>
-									<p class="card-text">${data.caption}</p>
-									<a href="${data.permalink}" class="btn btn-primary">See detail</a>
-								</div>			
-							</div>
-						</div>`)
-				})
-			})			
-		})
-	</script>
 </div>
 
 <div id="kontak">
