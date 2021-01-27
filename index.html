@@ -927,20 +927,29 @@
             </div>
         </div>
     </div>
-	<h1 style="text-align: center">Postingan Instagram Terbaru</h1>
-    	<div id="instafeed-container"></div>
+	<div id="instagram"></div>
 
-
-
-	<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
 	<script type="text/javascript">
-	var userFeed = new Instafeed({
-		get: 'user',
-		target: "instafeed-container",
-    	resolution: 'low_resolution',
-		accessToken: 'IGQVJXX0ZAVTUpiN3BJRklKdm9lYVBVU1p4OG0tcERENWx0SjhFSklGd0dyT01Fb1NyUGU4bVdJVEJXMnZAvWEk5aEZAPLWZAEY284OGZAfT2lkUzAwR2g3a1gtemZAjSDlqdmRCblpTZAmVZAUUctcWtIQ0lpQQZDZD'
-	});
-	userFeed.run();
+		$(document).ready(function(){
+			$.getJSON('data.json', function(result){
+				console.log(result);
+				let data = result.data
+				$.each(data, function(index, data){
+					$('#instagram').append(`
+						<div class="col-sm-3 text-center mt-2">
+							<div class="card">
+								<div class="card-header"></div>
+								<div class="card-body">
+									<img src="${data.permalink}" alt="Postingan hmtiudayana">
+									<p><strong class="badge badge-warning"><h5></h5></strong></p>
+									<p class="card-text">${data.caption}</p>
+									<a href="${data.permalink}" class="btn btn-primary">See detail</a>
+								</div>			
+							</div>
+						</div>`)
+				})
+			})			
+		})
 	</script>
 </div>
 
